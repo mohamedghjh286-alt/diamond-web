@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body { font-family: 'Cairo', sans-serif; }
+  input, textarea, select {
+    @apply bg-navy-950 text-white border border-[#2A3A50] rounded-lg px-4 py-2.5
+           focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500
+           placeholder-[#4A6080] transition-colors w-full;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold px-5 py-2.5
+           rounded-lg transition-all duration-200 cursor-pointer disabled:opacity-50
+           disabled:cursor-not-allowed active:scale-95;
+  }
+  .btn-ghost {
+    @apply border border-[#2A3A50] hover:border-gold-500 text-[#8FA3B8] hover:text-white
+           px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer text-sm;
+  }
+  .card {
+    @apply bg-[#1A2535] border border-[#2A3A50] rounded-xl;
+  }
+  .input-label {
+    @apply block text-[#8FA3B8] text-sm mb-1.5 font-medium;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0F1923; }
+::-webkit-scrollbar-thumb { background: #2A3A50; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #D4A017; }
